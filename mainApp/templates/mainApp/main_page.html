@@ -1,0 +1,49 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+
+{% block head %}
+{% endblock %}
+
+{% block main %}
+    <div class="main-container">
+        <div class="heading">
+        <h1 class="heading__title">Торговый терминал Тинькофф</h1>
+        <p class="heading__credits"><a class="heading__link" target="_blank" href="https://kwork.ru/user/anshf">Made by @JayZAnsh</a></p>
+        </div>
+        <div class="cards">
+              <div class="card card-1">
+              <div class="card__icon"><i class="fas fa-bolt"></i></div>
+              <p class="card__exit"><i class="fas fa-times"></i></p>
+              <h2 class="card__title">
+                Статистика Tinkoff:<br>
+                Кол-во сделок: {{ context.stat_t.deals }}<br>
+                Доход: ${{ context.stat_t.profit }}<br>
+                Комиссий уплачено: ${{ context.stat_t.total_fee }}<br>
+                Доход за вычетом комиссий: ${{ context.stat_t.clean_profit }}<br>
+              </h2>
+            </div>
+            <div class="card card-2">
+              <div class="card__icon"><i class="fas fa-bolt"></i></div>
+              <p class="card__exit"><i class="fas fa-times"></i></p>
+              <h2 class="card__title">
+                  Параметры необходимые для Тинькофф:<br>
+                  API-ключ: {{ tinkoff.t_status }}<br>
+                  Стоп-лосс: {{ tinkoff.stop }}<br>
+              </h2>
+              <p class="card__apply">
+               <a class="card__link" href="/admin">Изменить <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+            <div class="card card-2">
+              <div class="card__icon"><i class="fas fa-bolt"></i></div>
+              <p class="card__exit"><i class="fas fa-times"></i></p>
+              <h2 class="card__title">
+                  Торговый терминал<br>
+              </h2>
+              <p class="card__apply">
+               <a class="card__link" href="{% url 'terminal' %}">Открыть <i class="fas fa-arrow-right"></i></a>
+              </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

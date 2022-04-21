@@ -1,0 +1,24 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+{% block head %}
+    <title> Настройки </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+{% endblock %}
+
+{% block main %}
+    <div class="main-container">
+        <div class="heading">
+            <h1 class="heading__title">Настройки торгового терминала <br>{{context.error}}</h1>
+            <a class="heading__link"  href="{% url 'main' %}"><h2>На главную</h2></a>
+            <p class="heading__credits"><a class="heading__link" target="_blank" href="https://kwork.ru/user/anshf">Made by @JayZAnsh</a></p>
+          </div>
+        <form method="post">
+            <input type="text" name="api_key" id="api_key" class="form-control" placeholder="Введите API-ключ">
+            <input type="text" name="fee" id="fee" class="form-control" placeholder="Введите размер комиссии Tinkoff (Например: 0.003 - это 0.3%)">
+            <input type="text" name="stop_loss" id="stop_loss" class="form-control" placeholder="Введите Стоп-лосс">
+            <input type="text" name="password" id="password" class="form-control" placeholder="Введите пароль">
+            <input type="submit" class="btn btn-success" value="Отправить">
+        </form>
+        </div>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+
+{% block head %}
+<div class="main-container">
+        <div class="heading">
+            <h1 class="heading__title">Торговый терминал Тинькофф</h1>
+            <a class="heading__link"  href="{% url 'main' %}"><h2>На главную</h2></a>
+        <p class="heading__credits"><a class="heading__link" target="_blank" href="https://kwork.ru/user/anshf">Made by @JayZAnsh</a></p>
+        </div>
+        <div class="cards">
+              <div class="card card-1">
+                <div>
+                    <h2 class="card__title">
+                        Торговый терминал:<br>
+                    </h2>
+                </div>
+              <p class="card__exit"><i class="fas fa-times"></i></p>
+                <form method="post">
+                    <input type="text" name="api_key" id="api_key" class="form-control" placeholder="Название">
+                    <input type="text" name="fee" id="fee" class="form-control" placeholder="Количество">
+                    <input type="text" name="stop_loss" id="take_profit" class="form-control" placeholder="Тейк-профит">
+                    <input type="text" name="stop_loss" id="stop_loss" class="form-control" placeholder="Стоп-лосс">
+                    <input type="text" name="stop_loss" id="buy_sell" class="form-control" placeholder="Купить/продать">
+                    <input type="text" name="password" id="password" class="form-control" placeholder="Введите пароль">
+                    <input type="submit" class="btn btn-success" value="Отправить">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
